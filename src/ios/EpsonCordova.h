@@ -9,4 +9,5 @@
 }
 
 -(void) printReceipt:(CDVInvokedUrlCommand *)command;
+-(void) greet:(CDVInvokedUrlCommand*)command;
 @end
