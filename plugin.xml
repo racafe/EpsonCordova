@@ -1,2 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="epsoncordova" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>EpsonCordova</name><js-module name="EpsonCordova" src="www/EpsonCordova.js"><clobbers target="cordova.plugins.EpsonCordova" /></js-module><platform name="ios"><config-file parent="/*" target="config.xml"><feature name="EpsonCordova"><param name="ios-package" value="EpsonCordova" /></feature></config-file><source-file src="src/ios/EpsonCordova.m" /></platform></plugin>
+<plugin id="epsoncordova" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>EpsonCordova</name>
+    <js-module name="EpsonCordova" src="www/EpsonCordova.js">
+        <clobbers target="cordova.plugins.EpsonCordova" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="EpsonCordova">
+                <param name="ios-package" value="EpsonCordova" />
+            </feature>
+        </config-file>
+		<source-file src="src/ios/EpsonCordova.h" />
+        <source-file src="src/ios/EpsonCordova.m" />
+    </platform>
+</plugin>
