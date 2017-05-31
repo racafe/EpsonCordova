@@ -22,6 +22,7 @@
 		if (result != EPOS2_SUCCESS) { 
 			//Displays error messages 
 		}else{
+			long timeout = EPOS2_PARAM_DEFAULT;
 			result = [printer connect:@"TCP:192.168.192.168", timeout:EPOS2_PARAM_DEFAULT]; 
 			result = [printer beginTransaction]; 
 			if (result != EPOS2_SUCCESS) { 
@@ -31,7 +32,7 @@
 				status = [printer getStatus]; 
 				if (status.getConnection && status.getOnline) { 
 					result = [printer sendData:EPOS2_PARAM_DEFAULT]; 
-					pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:"Todo bien"];
+					pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Todo bien"];
 				}else{ 
 					//Displays error messages 
 					//Abort process 
