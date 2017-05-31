@@ -29,8 +29,8 @@
 			result = [printer beginTransaction]; 
 			if (result != EPOS2_SUCCESS) { 
 				//Displays error messages 
-				//pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-				pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Problema con conexión a ip"];
+				pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Problema con conexión a ip"];
+				//pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Problema con conexión a ip"];
 			}else{
 				Epos2PrinterStatusInfo *status = nil; 
 				status = [printer getStatus]; 
