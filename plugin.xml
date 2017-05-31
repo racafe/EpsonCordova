@@ -19,5 +19,7 @@
 		
 		<header-file src="src/ios/EpsonCordova.h" />
         <source-file src="src/ios/EpsonCordova.m" />
+		
+		<framework src="ExternalAccessory.framework" />
     </platform>
 </plugin>
