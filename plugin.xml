@@ -12,10 +12,10 @@
         </config-file>
 		
 		<header-file src="src/ios/ePOS2.h" />
-		<framework src="src/ios/libepos2.a" />
+		<source-file src="src/ios/libepos2.a" framework="true"/>
 		
 		<header-file src="src/ios/ePOSEasySelect.h" />
-		<framework src="src/ios/libeposeasyselect.a" />
+		<source-file src="src/ios/libeposeasyselect.a" framework="true" />
 		
 		<header-file src="src/ios/EpsonCordova.h" />
         <source-file src="src/ios/EpsonCordova.m" />
