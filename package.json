@@ -1,0 +1,25 @@
+{
+  "name": "EpsonCordova",
+  "version": "0.0.1",
+  "description": "Plugin de phonegap/cordova para impresoras termicas Epson",
+  "cordova": {
+    "id": "epsoncordova",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/racafe/EpsonCordova.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Technit Solutions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/racafe/EpsonCordova/issues"
+  },
+  "homepage": "https://github.com/racafe/EpsonCordova#readme"
+}
