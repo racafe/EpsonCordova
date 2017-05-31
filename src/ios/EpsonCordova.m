@@ -23,7 +23,7 @@
 			//Displays error messages 
 		}else{
 			long timeout = EPOS2_PARAM_DEFAULT;
-			result = [printer connect:@"TCP:192.168.192.168", timeout:EPOS2_PARAM_DEFAULT]; 
+			result = [printer connect:@"TCP:192.168.192.168", timeout]; 
 			result = [printer beginTransaction]; 
 			if (result != EPOS2_SUCCESS) { 
 				//Displays error messages 
