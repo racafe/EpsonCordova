@@ -9,13 +9,6 @@
     CDVPluginResult* pluginResult = nil;
     NSString* modelo = [command.arguments objectAtIndex:0];
 	NSString* ip = [command.arguments objectAtIndex:1];
-	
-	UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert" message:@"This is an alert." preferredStyle:UIAlertControllerStyleAlert];
-
-	UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-	
-	[alert addAction:defaultAction];
-	[self presentViewController:alert animated:YES completion:nil];
 
 	Epos2Printer *printer = nil; 
 	printer = [[Epos2Printer alloc] initWithPrinterSeries:EPOS2_TM_T20 lang:EPOS2_MODEL_ANK]; 
