@@ -8,5 +8,5 @@
 	
 }
 
--(void) print:(CDVInvokedUrlCommand *)command;
+-(void) printReceipt:(CDVInvokedUrlCommand *)command;
 @end

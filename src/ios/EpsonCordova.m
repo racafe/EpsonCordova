@@ -4,7 +4,7 @@
 
 @implementation EpsonCordova
 
--(void) print:(CDVInvokedUrlCommand*)command
+-(void) printReceipt:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
     NSString* modelo = [command.arguments objectAtIndex:0];
@@ -21,11 +21,13 @@
 		result = [printer addText:@"Hello World"]; 
 		if (result != EPOS2_SUCCESS) { 
 			//Displays error messages 
+			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
 		}else{
-			result = [printer connect:@"TCP:192.168.192.168" timeout:EPOS2_PARAM_DEFAULT]; 
+			result = [printer connect:[@"TCP:" stringByAppendingString:ip] timeout:EPOS2_PARAM_DEFAULT]; 
 			result = [printer beginTransaction]; 
 			if (result != EPOS2_SUCCESS) { 
 				//Displays error messages 
+				pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
 			}else{
 				Epos2PrinterStatusInfo *status = nil; 
 				status = [printer getStatus]; 
@@ -35,6 +37,7 @@
 				}else{ 
 					//Displays error messages 
 					//Abort process 
+					pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
 				} 
 			}
 
