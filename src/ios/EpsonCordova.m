@@ -1,6 +1,6 @@
 /********* EpsonCordova.m Cordova Plugin Implementation *******/
 
-#import <EpsonCordova.h>
+#import "EpsonCordova.h"
 
 @implementation EpsonCordova
 
