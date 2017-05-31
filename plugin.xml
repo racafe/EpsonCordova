@@ -21,5 +21,6 @@
         <source-file src="src/ios/EpsonCordova.m" />
 		
 		<framework src="ExternalAccessory.framework" />
+		<framework src="libxml2.2.dylib" />
     </platform>
 </plugin>
