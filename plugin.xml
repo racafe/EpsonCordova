@@ -10,7 +10,14 @@
                 <param name="ios-package" value="EpsonCordova" />
             </feature>
         </config-file>
-		<source-file src="src/ios/EpsonCordova.h" />
+		
+		<header-file src="src/ios/ePOS2.h" />
+		<source-file src="src/ios/libepos2.m" />
+		
+		<header-file src="src/ios/ePOSEasySelect.h" />
+		<source-file src="src/ios/libeposeasyselect.m" />
+		
+		<header-file src="src/ios/EpsonCordova.h" />
         <source-file src="src/ios/EpsonCordova.m" />
     </platform>
 </plugin>
