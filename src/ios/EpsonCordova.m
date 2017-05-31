@@ -4,7 +4,7 @@
 
 @implementation EpsonCordova
 
-- (void)print:(CDVInvokedUrlCommand*)command
+-(void) print:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
     NSString* modelo = [command.arguments objectAtIndex:0];

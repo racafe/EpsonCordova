@@ -5,5 +5,8 @@
 #import <Cordova/CDV.h>
 
 @interface EpsonCordova : CDVPlugin {
-	- (void)print:(CDVInvokedUrlCommand *)command;
+	
 }
+
+-(void) print:(CDVInvokedUrlCommand *)command;
+@end
