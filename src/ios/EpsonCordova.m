@@ -20,6 +20,9 @@
 		int result = EPOS2_SUCCESS; 
 		result = [printer addTextAlign:EPOS2_ALIGN_CENTER]; 
 		result = [printer addText:@"Hello World"]; 
+		result = [printer addFeedUnit:10]; 
+		result = [printer addCut:EPOS2_CUT_FEED]; 
+		
 		if (result != EPOS2_SUCCESS) { 
 			//Displays error messages 
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Problema con agregar texto"];
@@ -34,19 +37,7 @@
 				status = [printer getStatus]; 
 				if (status.getConnection && status.getOnline) { 
 					result = [printer sendData:EPOS2_PARAM_DEFAULT]; 
-					
-					- (void) onPtrReceive:(Epos2Printer *)printerObj code:(int)code status:(Epos2PrinterStatusInfo *)status printJobId:(NSString *)printJobId { 
-						if (code == EPOS2_CODE_SUCCESS) { 
-							//Displays successful print messages 
-							pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Todo bien"];
-						} else { 
-							//Displays error messages 
-							pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Problema al imprimir"];
-						} 
-						//Abort process 
-					}
-
-					
+					pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Todo bien"];
 				}else{ 
 					//Displays error messages 
 					//Abort process 
@@ -57,13 +48,14 @@
 		}
 	}
 	
-	int result = EPOS2_SUCCESS; 
-	result = [printer endTransaction]; 
-	result = [printer disconnect];
 	
-	[printer clearCommandBuffer]; 
-	[printer setReceiveEventDelegate:nil]; 
-	printer = nil;
+	//int result = EPOS2_SUCCESS; 
+	//result = [printer endTransaction]; 
+	//result = [printer disconnect];
+	
+	//[printer clearCommandBuffer]; 
+	//[printer setReceiveEventDelegate:nil]; 
+	//printer = nil;
 
 
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
